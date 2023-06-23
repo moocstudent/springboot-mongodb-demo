@@ -51,5 +51,9 @@ public class WordPage1RepoTest {
         System.out.println("updated:"+updated);
     }
 
+    @Test
+    public void testRepoDelete(){
+        wordPage1Repository.deleteById("1002");
+    }
 
 }

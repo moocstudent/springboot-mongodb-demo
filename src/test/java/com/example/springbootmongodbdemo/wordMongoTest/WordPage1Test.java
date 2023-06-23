@@ -7,6 +7,7 @@ import com.mongodb.MongoCredential;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.BsonDocument;
 import org.bson.Document;
@@ -93,6 +94,13 @@ public class WordPage1Test {
         System.out.println("Update Result:"+ result.getModifiedCount());
         List<WordPage1> wordPage1s = mongoTemplate.findAll(WordPage1.class, WordTypes.WORD1.getCode());
         wordPage1s.forEach(System.out::println);
+    }
+
+    @Test
+    public void testDel(){
+        WordPage1 wordPage11001 = mongoTemplate.findById("1001", WordPage1.class);
+        DeleteResult result = mongoTemplate.remove(wordPage11001);
+        System.out.println(result.getDeletedCount());
     }
 
 }
