@@ -1,0 +1,29 @@
+data:
+  mongodb:
+    # 基础链接参数
+    # 连接的库
+    database: mongodbtest
+    # 用户名
+    username: admin
+    # 密码
+    password: admin
+    # IP和端口（host:port），例如127.0.0.1:27017。集群模式用,分隔开，例如host1:port1,host2:port2
+    address: 127.0.0.1:27017
+    # 设置认证数据库，如果有的话
+    authenticationDatabase:
+    # 客户端连接池参数
+    clientName: ${spring.application.name}
+    # TCP（socket）连接超时时间，毫秒
+    connectionTimeoutMs: 5000
+    # TCP（socket）连接闲置时间，毫秒
+    maxConnectionIdleTimeMs: 60000
+    # TCP（socket）连接最多可以使用多久，毫秒
+    maxConnectionLifeTimeMs: 300000
+    #TCP（socket）读取超时时间，毫秒
+    readTimeoutMs: 15000
+    #心跳检测发送频率，毫秒
+    heartbeatFrequencyMs: 20000
+    #线程池允许的最大连接数
+    connectionsPerHost: 100
+    #线程池空闲时保持的最小连接数
+    minConnectionsPerHost: 20
